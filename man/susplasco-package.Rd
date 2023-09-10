@@ -4,9 +4,9 @@
 \name{susplasco-package}
 \alias{susplasco}
 \alias{susplasco-package}
-\title{susplasco: What the Package Does (One Line, Title Case)}
+\title{susplasco: Sustainable Places Scorecard Process Automation}
 \description{
-What the package does (one paragraph).
+Compile a PDF report based on information received via the Sustainable Place form and save it to SharePoint.
 }
 \seealso{
 Useful links:
@@ -18,6 +18,11 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Lee Durbin \email{lee.durbin@aucklandcouncil.govt.nz}
+
+Other contributors:
+\itemize{
+  \item Auckland Council [copyright holder]
+}
 
 }
 \keyword{internal}

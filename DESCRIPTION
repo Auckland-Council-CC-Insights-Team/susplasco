@@ -1,9 +1,13 @@
 Package: susplasco
-Title: What the Package Does (One Line, Title Case)
+Title: Sustainable Places Scorecard Process Automation
 Version: 0.0.0.9000
 Authors@R: 
-    person("Lee", "Durbin", , "lee.durbin@aucklandcouncil.govt.nz", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    c(
+    person("Lee", "Durbin", , "lee.durbin@aucklandcouncil.govt.nz", role = c("aut", "cre")),
+    person("Auckland Council", role = c("cph"))
+    )
+Description: Compile a PDF report based on information received via the 
+    Sustainable Place form and save it to SharePoint.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -11,7 +15,8 @@ RoxygenNote: 7.2.3
 URL: https://github.com/Auckland-Council-CC-Insights-Team/susplasco
 BugReports: https://github.com/Auckland-Council-CC-Insights-Team/susplasco/issues
 Imports: 
-    dplyr
+    dplyr,
+    tibble
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
