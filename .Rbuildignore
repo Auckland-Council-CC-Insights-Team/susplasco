@@ -2,3 +2,4 @@
 ^renv\.lock$
 ^susplasco\.Rproj$
 ^\.Rproj\.user$
+^LICENSE\.md$
