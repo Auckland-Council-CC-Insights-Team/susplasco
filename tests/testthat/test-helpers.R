@@ -1,3 +1,5 @@
+library(mockery)
+
 test_that("two dataframes are column-bound and returned as a single tibble", {
   df_1 <- data.frame(x = 1:10, y = letters[1:10])
   df_2 <- data.frame(z = 11:20, a = letters[11:20])
@@ -22,4 +24,17 @@ test_that("Google Sheet data is returned with renamed columns", {
 
   expect_equal(returned[c(6:8, 22)], expected)
   expect_error(returned |> select(dplyr::starts_with("q")))
+})
+
+g = get_live_data()
+f = function() g()
+test_that('demonstrate stubbing', {
+  # replaces 'get_live_data()' with a function that always returns path to scorecard_updated.rds
+  # but only when called from f
+  stub(f, 'g', test_path("testdata/scorecard_updated.rds"))
+  expect_equal(f(), test_path("testdata/scorecard_updated.rds"))
+
+  # this can also be written
+  # stub(f, 'g', function(...) 100)
+  # expect_equal(f(1), 101)
 })
