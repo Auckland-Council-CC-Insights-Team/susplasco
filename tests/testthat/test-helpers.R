@@ -26,15 +26,15 @@ test_that("Google Sheet data is returned with renamed columns", {
   expect_error(returned |> select(dplyr::starts_with("q")))
 })
 
-g = get_live_data()
-f = function() g()
-test_that('demonstrate stubbing', {
-  # replaces 'get_live_data()' with a function that always returns path to scorecard_updated.rds
-  # but only when called from f
-  stub(f, 'g', test_path("testdata/scorecard_updated.rds"))
-  expect_equal(f(), test_path("testdata/scorecard_updated.rds"))
+f <- function() {
+  return(get_live_data())
+}
 
-  # this can also be written
-  # stub(f, 'g', function(...) 100)
-  # expect_equal(f(1), 101)
+test_that("when requesting live data, it returns a file path to the updated RDS file", {
+  # Stub get_live_data() when called within f
+  stub(f, "get_live_data", function() {
+    return(test_path("testdata/scorecard_updated.rds"))
+  })
+
+  expect_equal(f(), test_path("testdata/scorecard_updated.rds"))
 })
