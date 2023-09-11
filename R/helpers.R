@@ -21,3 +21,18 @@ bind_and_tibble <- function(data, bind_to, ...) {
 
   return(bound_data)
 }
+
+
+#' Remove Question Numbers From Column Names
+#'
+#' @param g_sheet_import Path to RDS file containing the Google Sheets data.
+#'
+#' @return A tibble.
+#'
+#' @noRd
+clean_google_sheet_data <- function(g_sheet_import) {
+  g_sheet_data <- readRDS(g_sheet_import) |>
+    dplyr::rename_with(~word(.x, 2, -1, sep = fixed("_")), starts_with("q"))
+
+  return(g_sheet_data)
+}
