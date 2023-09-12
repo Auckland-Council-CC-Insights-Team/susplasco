@@ -2,6 +2,7 @@
 "_PACKAGE"
 
 ## usethis namespace: start
+#' @importFrom assertr verify
 #' @importFrom dplyr select
 #' @importFrom dplyr starts_with
 #' @importFrom googlesheets4 read_sheet

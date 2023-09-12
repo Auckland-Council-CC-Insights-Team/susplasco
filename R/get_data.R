@@ -60,7 +60,10 @@ get_new_submissions <- function(test = FALSE) {
   live_data <- data[[1]]
   archived_data <- data[[2]]
 
-  new_submissions <- suppressMessages(dplyr::anti_join(live_data, archived_data))
+  new_submissions <- suppressMessages(
+    dplyr::anti_join(live_data, archived_data)
+    ) |>
+    verify(ncol(.) == 1)
 
   return(new_submissions)
 }
