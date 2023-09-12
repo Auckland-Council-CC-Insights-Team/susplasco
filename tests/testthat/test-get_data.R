@@ -26,3 +26,28 @@ test_that("when requesting live data, it returns a file path to the updated RDS 
 
   expect_equal(f(), test_path("testdata/scorecard_updated.rds"))
 })
+
+g <- function() {
+  return(get_snapshot_data())
+}
+
+test_that("when requesting snapshot data, it returns a file path to the existing RDS file", {
+  # Stub get_snapshot_data() when called within f
+  mockery::stub(g, "get_snapshot_data", function() {
+    return(test_path("testdata/scorecard.rds"))
+  })
+
+  expect_equal(g(), test_path("testdata/scorecard.rds"))
+})
+
+
+test_that("we can return the live data and the snapshot data as a list of tibbles", {
+  expect_type(get_raw_data(test = TRUE), "list")
+})
+
+
+test_that("the new submissions from the form are returned", {
+  new_submission_expected <- get_new_submissions(test = TRUE)
+
+  expect_equal(new_submission_expected$last_name, "Jam")
+})

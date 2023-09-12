@@ -18,6 +18,7 @@ Imports:
     dplyr,
     googlesheets4,
     janitor,
+    purrr,
     stringr,
     tere,
     tibble

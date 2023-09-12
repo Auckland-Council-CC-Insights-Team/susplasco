@@ -6,6 +6,7 @@
 #' @importFrom dplyr starts_with
 #' @importFrom googlesheets4 read_sheet
 #' @importFrom janitor clean_names
+#' @importFrom purrr map
 #' @importFrom stringr fixed
 #' @importFrom stringr word
 #' @importFrom tibble tibble
