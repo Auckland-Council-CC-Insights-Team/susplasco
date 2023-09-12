@@ -38,6 +38,11 @@ clean_google_sheet_data <- function(g_sheet_import) {
 }
 
 
+#' Read Google Sheet Data And Save It To RDS
+#'
+#' @return A string pointing to the file path where the RDS file has been saved.
+#'
+#' @noRd
 get_live_data <- function() {
   save_path <- paste0(tere::get_file_storage_path(), "/scorecard_updated.rds")
 
