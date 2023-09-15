@@ -43,6 +43,21 @@
       ],
       "Hash": "9e5449c6a5d0a7d3a03097667ff63850"
     },
+    "MASS": {
+      "Package": "MASS",
+      "Version": "7.3-60",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "grDevices",
+        "graphics",
+        "methods",
+        "stats",
+        "utils"
+      ],
+      "Hash": "a56a6365b3fa73293ea8d084be0d9bb0"
+    },
     "Microsoft365R": {
       "Package": "Microsoft365R",
       "Version": "2.4.0",
@@ -94,6 +109,22 @@
         "sys"
       ],
       "Hash": "e8a22846fff485f0be3770c2da758713"
+    },
+    "assertr": {
+      "Package": "assertr",
+      "Version": "3.0.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "MASS",
+        "R",
+        "dplyr",
+        "methods",
+        "rlang",
+        "stats",
+        "utils"
+      ],
+      "Hash": "e500845b6d773cecb7864ec21eb84081"
     },
     "base64enc": {
       "Package": "base64enc",
