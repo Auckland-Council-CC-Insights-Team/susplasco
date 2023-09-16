@@ -27,19 +27,43 @@ clean_google_sheet_data <- function(g_sheet_import) {
 #'   returns a path to the file containing the live data that has been read
 #'   directly from Google Sheets.
 #'
+#' @param url The URL to the Google Sheet where the data is stored.
+#'
 #' @return A string pointing to the file path where the RDS file has been saved.
 #'
 #' @noRd
-get_live_data <- function() {
+get_live_data <- function(url) {
   save_path <- paste0(tere::get_file_storage_path(), "/scorecard_updated.rds")
 
-  url <- "https://docs.google.com/spreadsheets/d/1XdcrQk7OrQchJXTF-VambCS6MQOQ3NkLNMUEb51BAYQ/edit?resourcekey#gid=960956621"
   g_sheet_import_file <- googlesheets4::read_sheet(url) |>
     clean_names()
 
   saveRDS(g_sheet_import_file, save_path)
 
   return(save_path)
+}
+
+
+#' Get Information About Each Question In The Form
+#'
+#' @param metadata_filepath Filepath to the CSV file where the metadata is
+#'   stored.
+#'
+#' @return A tibble.
+#' @export
+#'
+#' @examples
+#' # If no value is passed to metadata_filepath, the function returns the default
+#' # metadata required to render the Sustainable Places Framework reports.
+#' get_metadata()
+get_metadata <- function(metadata_filepath = NULL) {
+  if(is.null(metadata_filepath)) {
+    metadata <- sustainableplaces
+  } else {
+    metadata <- readr::read_csv(metadata_filepath, col_types = "c")
+  }
+
+  return(metadata)
 }
 
 
@@ -52,11 +76,12 @@ get_live_data <- function() {
 #'   data.
 #'
 #' @param test Read from the test files? Default is `FALSE`.
+#' @param url The URL to the Google Sheet where the data is stored.
 #'
 #' @return A tibble.
 #' @export
-get_new_submissions <- function(test = FALSE) {
-  data <- get_raw_data(test = test)
+get_new_submissions <- function(test = FALSE, url = NULL) {
+  data <- get_raw_data(test = test, url = url)
   live_data <- data[[1]]
   archived_data <- data[[2]]
 
@@ -78,15 +103,16 @@ get_new_submissions <- function(test = FALSE) {
 #'   snapshot data.
 #'
 #' @param test Read from the test files? Default is `FALSE`.
+#' @param url The URL to the Google Sheet where the data is stored.
 #'
 #' @return A list of two tibbles.
 #'
 #' @export
-get_raw_data <- function(test = FALSE) {
+get_raw_data <- function(test = FALSE, url = NULL) {
   live_data <- ifelse(
     test == TRUE,
     testthat::test_path("testdata/scorecard_updated.rds"),
-    get_live_data()
+    get_live_data(url)
   )
 
   snapshot_data <- ifelse(

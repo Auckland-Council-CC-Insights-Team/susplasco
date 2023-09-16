@@ -7,7 +7,7 @@
 #'   passed to bind_to.
 #' @param bind_to A second dataframe whose rows are in the same order as the
 #'   dataframe passed to data.
-#' @param ... Optional key-value pairs passed to select(...).
+#' @param ... Key-value pairs passed to select(...).
 #'
 #' @return A tibble.
 #'

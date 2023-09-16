@@ -20,6 +20,8 @@ Imports:
     googlesheets4,
     janitor,
     purrr,
+    readr,
+    rlang,
     stringr,
     tere,
     tibble
@@ -27,3 +29,6 @@ Suggests:
     testthat (>= 3.0.0),
     mockery (>= 0.4.3)
 Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)
+LazyData: true

@@ -1,0 +1,126 @@
+id,sub_id,Pou,Question,Action,Status,image_coordinates,page_number,text_coordinates,score_coordinates
+tt_1,tt_1a,Te Tiriti,How do you connect with the whenua /  surrounding natural environment?,"We know our local maunga, awa",Activator,+250+610,8,+320+1330,+460+1330
+tt_1,tt_1b,Te Tiriti,How do you connect with the whenua /  surrounding natural environment?,We know who the local iwi are,Activator,+250+687,8,+320+1330,+460+1330
+tt_1,tt_1c,Te Tiriti,How do you connect with the whenua /  surrounding natural environment?,We spend time at our local maunga (mountain) and awa (body of water),Leader,+250+761,8,+320+1330,+460+1330
+tt_1,tt_1d,Te Tiriti,How do you connect with the whenua /  surrounding natural environment?,We share our local history with our community,Leader,+250+837,8,+320+1330,+460+1330
+tt_1,tt_1e,Te Tiriti,How do you connect with the whenua /  surrounding natural environment?,We learn the local history from iwi,Leader,+250+915,8,+320+1330,+460+1330
+tt_1,tt_1f,Te Tiriti,How do you connect with the whenua /  surrounding natural environment?,We use our local parks and areas for events,Leader,+250+987,8,+320+1330,+460+1330
+tt_1,tt_1g,Te Tiriti,How do you connect with the whenua /  surrounding natural environment?,We grow our community’s connection with the local awa and maunga,Leader,+250+1061,8,+320+1330,+460+1330
+tt_1,tt_1h,Te Tiriti,How do you connect with the whenua /  surrounding natural environment?,We take time as team to be outside,Leader,+250+1134,8,+320+1330,+460+1330
+tt_1,tt_1i,Te Tiriti,How do you connect with the whenua /  surrounding natural environment?,Our programmes connect our people to the natural environment,Champion,+250+1210,8,+320+1330,+460+1330
+tt_2,tt_2a,Te Tiriti,What do you do to grow knowledge?,We understand our knowledge gaps that we wish to develop,Activator,+250+1578,8,+320+2000,+460+2000
+tt_2,tt_2b,Te Tiriti,What do you do to grow knowledge?,We hold Te Ao Māori and Mātauranga Māori workshops,Leader,+250+1650,8,+320+2000,+460+2000
+tt_2,tt_2c,Te Tiriti,What do you do to grow knowledge?,We have started our Te Tiriti training journey,Leader,+250+1726,8,+320+2000,+460+2000
+tt_2,tt_2d,Te Tiriti,What do you do to grow knowledge?,We are committed to growing our knowledge,Champion,+250+1800,8,+320+2000,+460+2000
+tt_2,tt_2e,Te Tiriti,What do you do to grow knowledge?,We partner with Māori business and organisations,Champion,+250+1875,8,+320+2000,+460+2000
+tt_3,tt_3a,Te Tiriti,How do you incorporate Te Reo and Tikanga?,We use te reo everyday,Activator,+2030+609,8,+2090+1110,+2230+1110
+tt_3,tt_3b,Te Tiriti,How do you incorporate Te Reo and Tikanga?,We incorporate karakia (prayer/ blessing) and other practices into working life,Activator,+2030+680,8,+2090+1110,+2230+1110
+tt_3,tt_3c,Te Tiriti,How do you incorporate Te Reo and Tikanga?,"We incorporate te reo in our signage throughout our space and in any comms, we use",Activator,+2030+830,8,+2090+1110,+2230+1110
+tt_3,tt_3d,Te Tiriti,How do you incorporate Te Reo and Tikanga?,We are on our on our te reo and tikanga journey,Leader,+2030+980,8,+2090+1110,+2230+1110
+comres_1,comres_1a,Community resilience,How are you building sustainable action?  ,We take time as a team to talk and plan,Activator,+250+605,7,+320+1180,+460+1180
+comres_1,comres_1b,Community resilience,How are you building sustainable action?  ,As a team we know our vision for our place,Activator,+250+680,7,+320+1180,+460+1180
+comres_1,comres_1c,Community resilience,How are you building sustainable action?  ,We have a clear vision and kaupapa for our space,Leader,+250+755,7,+320+1180,+460+1180
+comres_1,comres_1d,Community resilience,How are you building sustainable action?  ,We collect feedback from our community to understand their needs,Leader,+250+832,7,+320+1180,+460+1180
+comres_1,comres_1e,Community resilience,How are you building sustainable action?  ,Our sustainable principles are built into our vendor/ tutor agreement,Leader,+250+905,7,+320+1180,+460+1180
+comres_1,comres_1f,Community resilience,How are you building sustainable action?  ,Our board supports sustainable strategy,Champion,+250+980,7,+320+1180,+460+1180
+comres_1,comres_1g,Community resilience,How are you building sustainable action?  ,Sustainability is a priority in our strategy and delivery,Champion,+250+1054,7,+320+1180,+460+1180
+comres_2,comres_2a,Community resilience,How are you preparing for emergency management?,We know the hazards that impact our place and local area,Activator,+250+1427,7,+320+2075,+460+2075
+comres_2,comres_2b,Community resilience,How are you preparing for emergency management?,We have a business continuity plan,Activator,+250+1499,7,+320+2075,+460+2075
+comres_2,comres_2c,Community resilience,How are you preparing for emergency management?,We have a personal safety plan,Leader,+250+1576,7,+320+2075,+460+2075
+comres_2,comres_2d,Community resilience,How are you preparing for emergency management?,We have an emergency preparedness kit to allow the venue to keep operating,Leader,+250+1648,7,+320+2075,+460+2075
+comres_2,comres_2e,Community resilience,How are you preparing for emergency management?,We run programmes to help our community in an emergency,Leader,+250+1722,7,+320+2075,+460+2075
+comres_2,comres_2f,Community resilience,How are you preparing for emergency management?,We run programmes that focus on building connection our community,Leader,+250+1796,7,+320+2075,+460+2075
+comres_2,comres_2g,Community resilience,How are you preparing for emergency management?,We have created an emergency awareness plan with our community,Champion,+250+1874,7,+320+2075,+460+2075
+comres_2,comres_2h,Community resilience,How are you preparing for emergency management?,We know how to operate as a Community Emergency Hub,Champion,+250+1948,7,+320+2075,+460+2075
+comres_3,comres_3a,Community resilience,What do you do to support social enterprise and circular economies?  ,We are connected to social enterprises,Activator,+1825+333,7,+1890+830,+2030+830
+comres_3,comres_3b,Community resilience,What do you do to support social enterprise and circular economies?  ,We support and promote circular economies,Activator,+1825+402,7,+1890+830,+2030+830
+comres_3,comres_3c,Community resilience,What do you do to support social enterprise and circular economies?  ,We have a list of local & social vendors available on request,Leader,+1825+476,7,+1890+830,+2030+830
+comres_3,comres_3d,Community resilience,What do you do to support social enterprise and circular economies?  ,"When planning events, we think about the impact on our local community",Leader,+1825+551,7,+1890+830,+2030+830
+comres_3,comres_3e,Community resilience,What do you do to support social enterprise and circular economies?  ,We choose to work with local vendors/ tutor to deliver our programmes,Leader,+1825+630,7,+1890+830,+2030+830
+comres_3,comres_3f,Community resilience,What do you do to support social enterprise and circular economies?  ,We partner with social enterprises to deliver events and programmes,Champion,+1825+703,7,+1890+830,+2030+830
+comres_4,comres_4a,Community resilience,How do you know you are having impact?  ,We collect feedback from our community and attendees,Activator,+1825+1075,7,+1890+1650,+2030+1650
+comres_4,comres_4b,Community resilience,How do you know you are having impact?  ,We understand how to set measures and outcomes for what we do,Activator,+1825+1150,7,+1890+1650,+2030+1650
+comres_4,comres_4c,Community resilience,How do you know you are having impact?  ,We share good news stories on social media,Leader,+1825+1224,7,+1890+1650,+2030+1650
+comres_4,comres_4d,Community resilience,How do you know you are having impact?  ,We are confident in setting objectives and outcomes for success,Leader,+1825+1300,7,+1890+1650,+2030+1650
+comres_4,comres_4e,Community resilience,How do you know you are having impact?  ,We debrief and reflect after events,Leader,+1825+1375,7,+1890+1650,+2030+1650
+comres_4,comres_4f,Community resilience,How do you know you are having impact?  ,We share our learnings and success with others,Champion,+1825+1450,7,+1890+1650,+2030+1650
+comres_4,comres_4g,Community resilience,How do you know you are having impact?  ,We share our impact with our community to inspire,Champion,+1825+1524,7,+1890+1650,+2030+1650
+comres_5,comres_5a,Community resilience,What do you do to be inclusive and accessible?  ,We know the demographic of our area,Activator,+1825+1894,7,+1890+2250,+2030+2250
+comres_5,comres_5b,Community resilience,What do you do to be inclusive and accessible?  ,Our space is easy to book,Activator,+1825+1970,7,+1890+2250,+2030+2250
+comres_5,comres_5c,Community resilience,What do you do to be inclusive and accessible?  ,We are inclusive of all cultures,Activator,+1825+2045,7,+1890+2250,+2030+2250
+comres_5,comres_5d,Community resilience,What do you do to be inclusive and accessible?  ,We use digital solutions to be more accessible,Leader,+1825+2120,7,+1890+2250,+2030+2250
+zerowaste_1,zerowaste_1a,Zero waste,What do you do to make your place low waste?  ,We know what goes in which bin,Activator,+250+885,5,+320+1985,+460+1985
+zerowaste_1,zerowaste_1b,Zero waste,What do you do to make your place low waste?  ,We ask our waste provider for waste data,Activator,+250+960,5,+320+1985,+460+1985
+zerowaste_1,zerowaste_1c,Zero waste,What do you do to make your place low waste?  ,We have signage at our bins to encourage people to put items in the right bin,Activator,+250+1035,5,+320+1985,+460+1985
+zerowaste_1,zerowaste_1d,Zero waste,What do you do to make your place low waste?  ,We reduce our printing,Activator,+250+1112,5,+320+1985,+460+1985
+zerowaste_1,zerowaste_1e,Zero waste,What do you do to make your place low waste?  ,We bring our own keep cups and water bottles to work,Activator,+250+1185,5,+320+1985,+460+1985
+zerowaste_1,zerowaste_1f,Zero waste,What do you do to make your place low waste?  ,We provide reusable items for hirers and people who use our space,Activator,+250+1260,5,+320+1985,+460+1985
+zerowaste_1,zerowaste_1g,Zero waste,What do you do to make your place low waste?  ,We have conducted a waste audit to understand our waste,Leader,+250+1334,5,+320+1985,+460+1985
+zerowaste_1,zerowaste_1h,Zero waste,What do you do to make your place low waste?  ,We have a waste minimisation plan,Leader,+250+1408,5,+320+1985,+460+1985
+zerowaste_1,zerowaste_1i,Zero waste,What do you do to make your place low waste?  ,We separate food scraps and compost,Leader,+250+1485,5,+320+1985,+460+1985
+zerowaste_1,zerowaste_1j,Zero waste,What do you do to make your place low waste?  ,We priorities programmes that do not use new materials,Leader,+250+1557,5,+320+1985,+460+1985
+zerowaste_1,zerowaste_1k,Zero waste,What do you do to make your place low waste?  ,We teach the community how to minimise waste at home,Leader,+250+1634,5,+320+1985,+460+1985
+zerowaste_1,zerowaste_1l,Zero waste,What do you do to make your place low waste?  ,We share our waste minimisation plan with our community to inspire,Champion,+250+1711,5,+320+1985,+460+1985
+zerowaste_1,zerowaste_1m,Zero waste,What do you do to make your place low waste?  ,We have built zero waste policies into our hire contracts,Champion,+250+1783,5,+320+1985,+460+1985
+zerowaste_1,zerowaste_1n,Zero waste,What do you do to make your place low waste?  ,You have a reusable event kit,Champion,+250+1860,5,+320+1985,+460+1985
+zerowaste_2,zerowaste_2a,Zero waste,What do you do to encourage zero waste actions and behaviors?  ,We have completed the WasteWise E-learning,Activator,+1920+885,5,+1970+1680,+2110+1680
+zerowaste_2,zerowaste_2b,Zero waste,What do you do to encourage zero waste actions and behaviors?  ,We know where our local community recycling centre is,Activator,+1920+960,5,+1970+1680,+2110+1680
+zerowaste_2,zerowaste_2c,Zero waste,What do you do to encourage zero waste actions and behaviors?  ,We share the low waste event guide to people who hire our venue,Activator,+1920+1035,5,+1970+1680,+2110+1680
+zerowaste_2,zerowaste_2d,Zero waste,What do you do to encourage zero waste actions and behaviors?  ,We only buy new when we need to,Leader,+1920+1110,5,+1970+1680,+2110+1680
+zerowaste_2,zerowaste_2e,Zero waste,What do you do to encourage zero waste actions and behaviors?  ,We repair items before we replace them,Leader,+1920+1184,5,+1970+1680,+2110+1680
+zerowaste_2,zerowaste_2f,Zero waste,What do you do to encourage zero waste actions and behaviors?  ,We run or support repair café's,Leader,+1920+1260,5,+1970+1680,+2110+1680
+zerowaste_2,zerowaste_2g,Zero waste,What do you do to encourage zero waste actions and behaviors?  ,We ask our community when we need resources,Leader,+1920+1337,5,+1970+1680,+2110+1680
+zerowaste_2,zerowaste_2h,Zero waste,What do you do to encourage zero waste actions and behaviors?  ,"We get access to equipment in a sustainable way I.e., rent or borrow",Champion,+1920+1412,5,+1970+1680,+2110+1680
+zerowaste_2,zerowaste_2i,Zero waste,What do you do to encourage zero waste actions and behaviors?  ,We no longer use single use items,Champion,+1920+1488,5,+1970+1680,+2110+1680
+zerowaste_2,zerowaste_2j,Zero waste,What do you do to encourage zero waste actions and behaviors?  ,We partner with people who align with our waste values,Champion,+1920+1565,5,+1970+1680,+2110+1680
+zeroemiss_1,zeroemiss_1a,Zero Emissions,What do you do to promote sustainable commuting?  ,I have completed a journey planner on how to get to work,Activator,+250+605,6,+320+1255,+460+1255
+zeroemiss_1,zeroemiss_1b,Zero Emissions,What do you do to promote sustainable commuting?  ,We promote walking and cycling around our community,Activator,+250+680,6,+320+1255,+460+1255
+zeroemiss_1,zeroemiss_1c,Zero Emissions,What do you do to promote sustainable commuting?  ,We tell hirers how to get to our place by public transport,Activator,+250+755,6,+320+1255,+460+1255
+zeroemiss_1,zeroemiss_1d,Zero Emissions,What do you do to promote sustainable commuting?  ,We promote where the nearest bikes rack is,Activator,+250+832,6,+320+1255,+460+1255
+zeroemiss_1,zeroemiss_1e,Zero Emissions,What do you do to promote sustainable commuting?  ,We have a bike rack at our venue,Leader,+250+905,6,+320+1255,+460+1255
+zeroemiss_1,zeroemiss_1f,Zero Emissions,What do you do to promote sustainable commuting?  ,We encourage carpooling to get to our place,Leader,+250+980,6,+320+1255,+460+1255
+zeroemiss_1,zeroemiss_1g,Zero Emissions,What do you do to promote sustainable commuting?  ,our team carpools to work,Champion,+250+1054,6,+320+1255,+460+1255
+zeroemiss_1,zeroemiss_1h,Zero Emissions,What do you do to promote sustainable commuting?  ,We encourage active transport for our community’s wellbeing,Champion,+250+1128,6,+320+1255,+460+1255
+zeroemiss_2,zeroemiss_2a,Zero Emissions,What are you doing to become water and energy efficient? ,We turn off our computers at night,Activator,+250+1503,6,+320+2300,+460+2300
+zeroemiss_2,zeroemiss_2b,Zero Emissions,What are you doing to become water and energy efficient? ,We turn lights off when not in the room,Activator,+250+1575,6,+320+2300,+460+2300
+zeroemiss_2,zeroemiss_2c,Zero Emissions,What are you doing to become water and energy efficient? ,We only heat room that are in use,Activator,+250+1652,6,+320+2300,+460+2300
+zeroemiss_2,zeroemiss_2d,Zero Emissions,What are you doing to become water and energy efficient? ,We turn appliances off at the wall,Activator,+250+1726,6,+320+2300,+460+2300
+zeroemiss_2,zeroemiss_2e,Zero Emissions,What are you doing to become water and energy efficient? ,We share our energy saving tips with people who hirer our space,Activator,+250+1800,6,+320+2300,+460+2300
+zeroemiss_2,zeroemiss_2f,Zero Emissions,What are you doing to become water and energy efficient? ,We have harvest rainwater,Leader,+250+1878,6,+320+2300,+460+2300
+zeroemiss_2,zeroemiss_2g,Zero Emissions,What are you doing to become water and energy efficient? ,We buy energy efficient products when replacing is needed,Leader,+250+1948,6,+320+2300,+460+2300
+zeroemiss_2,zeroemiss_2h,Zero Emissions,What are you doing to become water and energy efficient? ,We have agreed water and energy saving practices as a team,Leader,+250+2026,6,+320+2300,+460+2300
+zeroemiss_2,zeroemiss_2i,Zero Emissions,What are you doing to become water and energy efficient? ,We teach our community how to save power and water at home,Leader,+250+2097,6,+320+2300,+460+2300
+zeroemiss_2,zeroemiss_2j,Zero Emissions,What are you doing to become water and energy efficient? ,We share cost saving resources with our community,Champion,+250+2174,6,+320+2300,+460+2300
+zeroemiss_3,zeroemiss_3a,Zero Emissions,What are you doing to reduce your carbon emissions? ,We choose local vendors/ providers to reduce our emissions,Activator,+1825+605,6,+1890+1255,+2030+1255
+zeroemiss_3,zeroemiss_3b,Zero Emissions,What are you doing to reduce your carbon emissions? ,We understand what carbon emissions are,Activator,+1825+680,6,+1890+1255,+2030+1255
+zeroemiss_3,zeroemiss_3c,Zero Emissions,What are you doing to reduce your carbon emissions? ,We understand how to reduce our carbon emissions,Leader,+1825+755,6,+1890+1255,+2030+1255
+zeroemiss_3,zeroemiss_3d,Zero Emissions,What are you doing to reduce your carbon emissions? ,We communicate what carbon emissions are to our community,Leader,+1825+832,6,+1890+1255,+2030+1255
+zeroemiss_3,zeroemiss_3e,Zero Emissions,What are you doing to reduce your carbon emissions? ,We have a plan to reduce our carbon emission,Champion,+1825+905,6,+1890+1255,+2030+1255
+zeroemiss_3,zeroemiss_3f,Zero Emissions,What are you doing to reduce your carbon emissions? ,We have personal carbon goals,Champion,+1825+980,6,+1890+1255,+2030+1255
+zeroemiss_3,zeroemiss_3g,Zero Emissions,What are you doing to reduce your carbon emissions? ,We have built carbon reduction policy into hire agreements,Champion,+1825+1054,6,+1890+1255,+2030+1255
+zeroemiss_3,zeroemiss_3h,Zero Emissions,What are you doing to reduce your carbon emissions? ,We plan carbon reduction in our event plans,Champion,+1825+1128,6,+1890+1255,+2030+1255
+zeroemiss_4,zeroemiss_4a,Zero Emissions,What are you doing to protect and restore native biodiversity? ,We know the local conservation groups in our area,Activator,+1825+1503,6,+1890+2225,+2030+2225
+zeroemiss_4,zeroemiss_4b,Zero Emissions,What are you doing to protect and restore native biodiversity? ,We know about conservation projects in our area,Activator,+1825+1575,6,+1890+2225,+2030+2225
+zeroemiss_4,zeroemiss_4c,Zero Emissions,What are you doing to protect and restore native biodiversity? ,We collaborate with local conservation groups,Leader,+1825+1652,6,+1890+2225,+2030+2225
+zeroemiss_4,zeroemiss_4d,Zero Emissions,What are you doing to protect and restore native biodiversity? ,We promote responsible pet ownership to our community,Leader,+1825+1726,6,+1890+2225,+2030+2225
+zeroemiss_4,zeroemiss_4e,Zero Emissions,What are you doing to protect and restore native biodiversity? ,We trap pest in our local area,Champion,+1825+1800,6,+1890+2225,+2030+2225
+zeroemiss_4,zeroemiss_4f,Zero Emissions,What are you doing to protect and restore native biodiversity? ,We remove pest plants in our local area,Champion,+1825+1878,6,+1890+2225,+2030+2225
+zeroemiss_4,zeroemiss_4g,Zero Emissions,What are you doing to protect and restore native biodiversity? ,We plant native plant species,Champion,+1825+1948,6,+1890+2225,+2030+2225
+zeroemiss_4,zeroemiss_4h,Zero Emissions,What are you doing to protect and restore native biodiversity? ,We are cleaning up our local water ways,Champion,+1825+2026,6,+1890+2225,+2030+2225
+zeroemiss_4,zeroemiss_4i,Zero Emissions,What are you doing to protect and restore native biodiversity? ,We connect our community with the natural environment,Champion,+1825+2097,6,+1890+2225,+2030+2225
+kai_1,kai_1a,Kai for all,What do you do around food equity and sovereignty? ,We understand the barriers for food equity in our community,Activator,+250+610,9,+320+1260,+460+1260
+kai_1,kai_1b,Kai for all,What do you do around food equity and sovereignty? ,We know local food business/ enterprises in our area,Activator,+250+684,9,+320+1260,+460+1260
+kai_1,kai_1c,Kai for all,What do you do around food equity and sovereignty? ,We know our local foodbank organisations,Activator,+250+758,9,+320+1260,+460+1260
+kai_1,kai_1d,Kai for all,What do you do around food equity and sovereignty? ,We use local & sustainable food vendors at events,Leader,+250+833,9,+320+1260,+460+1260
+kai_1,kai_1e,Kai for all,What do you do around food equity and sovereignty? ,We host a food market/ produce swap,Leader,+250+912,9,+320+1260,+460+1260
+kai_1,kai_1f,Kai for all,What do you do around food equity and sovereignty? ,We encourage community to use our kitchen facilities,Leader,+250+984,9,+320+1260,+460+1260
+kai_1,kai_1g,Kai for all,What do you do around food equity and sovereignty? ,Our community has a shared vision and goal for food,Champion,+250+1058,9,+320+1260,+460+1260
+kai_1,kai_1h,Kai for all,What do you do around food equity and sovereignty? ,We support/ collaborate to make sure our community has access to fresh food,Champion,+250+1134,9,+320+1260,+460+1260
+kai_2,kai_2a,Kai for all,What do you do for food resilience in your area? ,We share food network info & resources with our community,Activator,+250+1504,9,+320+1930,+460+1930
+kai_2,kai_2b,Kai for all,What do you do for food resilience in your area? ,We partner with food resilience agencies,Leader,+250+1581,9,+320+1930,+460+1930
+kai_2,kai_2c,Kai for all,What do you do for food resilience in your area? ,We support/ volunteer at our local community food garden,Leader,+250+1655,9,+320+1930,+460+1930
+kai_2,kai_2d,Kai for all,What do you do for food resilience in your area? ,We understand local food systems and our community need,Leader,+250+1730,9,+320+1930,+460+1930
+kai_2,kai_2e,Kai for all,What do you do for food resilience in your area? ,We run workshops to understand and support local food systems,Champion,+250+1805,9,+320+1930,+460+1930
+kai_3,kai_3a,Kai for all,What do you do around food cultures and traditions?  ,We understand food cultures and traditions,Activator,+1855+610,9,+1915+885,+2055+885
+kai_3,kai_3b,Kai for all,What do you do around food cultures and traditions?  ,We celebrate diverse food cultures and traditions,Leader,+1855+681,9,+1915+885,+2055+885
+kai_3,kai_3c,Kai for all,What do you do around food cultures and traditions?  ,We support our community to express their own food cultures and traditions,Champion,+1855+757,9,+1915+885,+2055+885

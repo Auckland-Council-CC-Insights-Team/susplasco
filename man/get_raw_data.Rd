@@ -4,10 +4,12 @@
 \alias{get_raw_data}
 \title{Get Live Data and Snapshot Data Together}
 \usage{
-get_raw_data(test = FALSE)
+get_raw_data(test = FALSE, url = NULL)
 }
 \arguments{
 \item{test}{Read from the test files? Default is \code{FALSE}.}
+
+\item{url}{The URL to the Google Sheet where the data is stored.}
 }
 \value{
 A list of two tibbles.
