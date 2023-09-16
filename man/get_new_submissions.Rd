@@ -4,11 +4,9 @@
 \alias{get_new_submissions}
 \title{Create A Data Table Of Newly-Submitted Form Entries}
 \usage{
-get_new_submissions(test = FALSE, url = NULL)
+get_new_submissions(url = NULL)
 }
 \arguments{
-\item{test}{Read from the test files? Default is \code{FALSE}.}
-
 \item{url}{The URL to the Google Sheet where the data is stored.}
 }
 \value{

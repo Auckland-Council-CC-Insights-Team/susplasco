@@ -6,13 +6,22 @@
 #'   the column names.
 #'
 #'
-#' @param g_sheet_import Path to RDS file containing the Google Sheets data.
+#' @param g_sheet_import Path to RDS file containing the Google Sheets data, or
+#'   the exported dummy data.
 #'
 #' @return A tibble.
 #'
 #' @noRd
 clean_google_sheet_data <- function(g_sheet_import) {
-  g_sheet_data <- readRDS(g_sheet_import) |>
+  if(g_sheet_import == "live") {
+    g_sheet_import <- newsustainableplacesscorecard
+  } else if(g_sheet_import == "snapshot") {
+    g_sheet_import <- sustainableplacesscorecard
+  } else {
+    g_sheet_import <- readRDS(g_sheet_import)
+  }
+
+  g_sheet_data <- g_sheet_import |>
     dplyr::rename_with(~word(.x, 2, -1, sep = fixed("_")), starts_with("q"))
 
   return(g_sheet_data)
@@ -27,7 +36,8 @@ clean_google_sheet_data <- function(g_sheet_import) {
 #'   returns a path to the file containing the live data that has been read
 #'   directly from Google Sheets.
 #'
-#' @param url The URL to the Google Sheet where the data is stored.
+#' @param url The URL to the Google Sheet where the data is stored. By default,
+#'   this points to the Sustainable Place Framework scorecard data.
 #'
 #' @return A string pointing to the file path where the RDS file has been saved.
 #'
@@ -58,7 +68,7 @@ get_live_data <- function(url) {
 #' get_metadata()
 get_metadata <- function(metadata_filepath = NULL) {
   if(is.null(metadata_filepath)) {
-    metadata <- sustainableplaces
+    metadata <- sustainableplacesmetadata
   } else {
     metadata <- readr::read_csv(metadata_filepath, col_types = "c")
   }
@@ -75,13 +85,12 @@ get_metadata <- function(metadata_filepath = NULL) {
 #'   returns all the rows in the live data that are not found in the snapshot
 #'   data.
 #'
-#' @param test Read from the test files? Default is `FALSE`.
 #' @param url The URL to the Google Sheet where the data is stored.
 #'
 #' @return A tibble.
 #' @export
-get_new_submissions <- function(test = FALSE, url = NULL) {
-  data <- get_raw_data(test = test, url = url)
+get_new_submissions <- function(url = NULL) {
+  data <- get_raw_data(url = url)
   live_data <- data[[1]]
   archived_data <- data[[2]]
 
@@ -102,22 +111,21 @@ get_new_submissions <- function(test = FALSE, url = NULL) {
 #'   returns a list of two tibbles, one for the live data and one for the
 #'   snapshot data.
 #'
-#' @param test Read from the test files? Default is `FALSE`.
 #' @param url The URL to the Google Sheet where the data is stored.
 #'
 #' @return A list of two tibbles.
 #'
 #' @export
-get_raw_data <- function(test = FALSE, url = NULL) {
+get_raw_data <- function(url = NULL) {
   live_data <- ifelse(
-    test == TRUE,
-    testthat::test_path("testdata/scorecard_updated.rds"),
+    is.null(url),
+    "live",
     get_live_data(url)
   )
 
   snapshot_data <- ifelse(
-    test == TRUE,
-    testthat::test_path("testdata/scorecard.rds"),
+    is.null(url),
+    "snapshot",
     get_snapshot_data()
   )
 

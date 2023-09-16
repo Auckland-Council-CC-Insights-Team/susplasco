@@ -1,4 +1,4 @@
-sustainableplaces <- tibble::tibble(
+sustainableplacesmetadata <- tibble::tibble(
   id = c(
     rep("tt_1", 9),
     rep("tt_2", 5),
@@ -707,4 +707,163 @@ sustainableplaces <- tibble::tibble(
   )
 )
 
-usethis::use_data(sustainableplaces, overwrite = TRUE, internal = TRUE)
+sustainableplacesscorecard <- tibble::tibble(
+  timestamp = c(Sys.time(), Sys.time()+60, Sys.time()+120, Sys.time()+240, Sys.time()+580),
+  email_address = c("acsustainableplaces@gmail.com", "h@h.om", "waystar@co.nz", "roman.roy@waystar.com", "siobhan.roy@waystar.com"),
+  first_name = c("Nina", "Leonard", "Logan", "Roman", "Shiv"),
+  last_name = c("Tester", "Nimoy", "Roy", "Roy", "Roy"),
+  your_facility = c("Council HQ", "Starship Enterprise", "Waystar Royco HQ", "Waystar Royco HQ", "Waystar Royco HQ"),
+  q12_how_do_you_connect_with_the_whenua_surrounding_natural_environment = c(
+    "We know our local maunga, awa, We share our local history with our community, We use our local parks and areas for events, Our programmes connect our people to the natural environment",
+    NA,
+    "We know our local maunga, awa, We know who the local iwi are, We spend time at our local maunga (mountain) and awa (body of water), We share our local history with our community, We learn the local history from iwi, We use our local parks and areas for events, We grow our community’s connection with the local awa and maunga, We take time as team to be outside, Our programmes connect our people to the natural environment",
+    "We spend time at our local maunga (mountain) and awa (body of water), We share our local history with our community, We learn the local history from iwi, We use our local parks and areas for events",
+    "We know our local maunga, awa, We know who the local iwi are, We spend time at our local maunga (mountain) and awa (body of water)"
+    ),
+  q13_what_do_you_do_to_grow_knowledge = c(
+    "We hold Te Ao Māori and Mātauranga Māori workshops, We have started our Te Tiriti training journey",
+    NA,
+    "We understand our knowledge gaps that we wish to develop, We hold Te Ao Māori and Mātauranga Māori workshops, We have started our Te Tiriti training journey, We are committed to growing our knowledge, We partner with Māori business and organisations",
+    "We understand our knowledge gaps that we wish to develop, We hold Te Ao Māori and Mātauranga Māori workshops",
+    "We have started our Te Tiriti training journey, We are committed to growing our knowledge, We partner with Māori business and organisations"
+  ),
+  q14_how_do_you_incorporate_te_reo_and_tikanga = c(
+    "We incorporate karakia (prayer/ blessing) and other practices into working life, We are on our on our te reo and tikanga journey",
+    NA,
+    "We use te reo everyday, We incorporate karakia (prayer/ blessing) and other practices into working life, We incorporate te reo in our signage throughout our space and in any comms, we use, We are on our on our te reo and tikanga journey",
+    "We incorporate te reo in our signage throughout our space and in any comms, we use, We are on our on our te reo and tikanga journey",
+    "We incorporate te reo in our signage throughout our space and in any comms, we use, We are on our on our te reo and tikanga journey"
+  ),
+  q7_how_are_you_building_sustainable_action = c(
+    "We take time as a team to talk and plan, We have a clear vision and kaupapa for our space, Our sustainable principles are built into our vendor/ tutor agreement, Sustainability is a priority in our strategy and delivery",
+    NA,
+    "We take time as a team to talk and plan, As a team we know our vision for our place, We have a clear vision and kaupapa for our space, We collect feedback from our community to understand their needs, Our sustainable principles are built into our vendor/ tutor agreement, Our board supports sustainable strategy, Sustainability is a priority in our strategy and delivery",
+    "As a team we know our vision for our place, We have a clear vision and kaupapa for our space, Our sustainable principles are built into our vendor/ tutor agreement",
+    "We take time as a team to talk and plan, As a team we know our vision for our place, We have a clear vision and kaupapa for our space, Our board supports sustainable strategy, Sustainability is a priority in our strategy and delivery"
+  ),
+  q8_how_are_you_preparing_for_emergency_management = c(
+    "We have a business continuity plan, We have a personal safety plan, We have an emergency preparedness kit to allow the venue to keep operating",
+    NA,
+    "We know the hazards that impact our place and local area, We have a business continuity plan, We have a personal safety plan, We have an emergency preparedness kit to allow the venue to keep operating, We run programmes to help our community in an emergency, We run programmes that focus on building connection our community, We have created an emergency awareness plan with our community, We know how to operate as a Community Emergency Hub",
+    "We have an emergency preparedness kit to allow the venue to keep operating, We run programmes to help our community in an emergency, We run programmes that focus on building connection our community",
+    "We know the hazards that impact our place and local area, We have a business continuity plan, We have a personal safety plan, We have created an emergency awareness plan with our community, We know how to operate as a Community Emergency Hub"
+  ),
+  q9_what_do_you_do_to_support_social_enterprise_and_circular_economies = c(
+    "We have a list of local & social vendors available on request, We partner with social enterprises to deliver events and programmes",
+    NA,
+    "We are connected to social enterprises, We support and promote circular economies, We have a list of local & social vendors available on request, When planning events, we think about the impact on our local community, We choose to work with local vendors / tutor to deliver our programmes, We partner with social enterprises to deliver events and programmes",
+    "We are connected to social enterprises, We support and promote circular economies, We have a list of local & social vendors available on request, When planning events, we think about the impact on our local community, We choose to work with local vendors / tutor to deliver our programmes, We partner with social enterprises to deliver events and programmes",
+    "We partner with social enterprises to deliver events and programmes"
+  ),
+  q10_how_do_you_know_you_are_having_impact = c(
+    "We understand how to set measures and outcomes for what we do, We share good news stories on social media, We share our learnings and success with others",
+    NA,
+    "We collect feedback from our community and attendees, We understand how to set measures and outcomes for what we do, We share good news stories on social media, We are confident in setting objectives and outcomes for success, We debrief and reflect after events, We share our learnings and success with others, We share our impact with our community to inspire",
+    "We understand how to set measures and outcomes for what we do, We share good news stories on social media, We share our learnings and success with others, We share our impact with our community to inspire",
+    "We share good news stories on social media, We are confident in setting objectives and outcomes for success, We debrief and reflect after events, We share our impact with our community to inspire"
+  ),
+  q11_what_do_you_do_to_be_inclusive_and_accessible = c(
+    "We know the demographic of our area, Our space is easy to book",
+    NA,
+    "We know the demographic of our area, Our space is easy to book, We are inclusive of all cultures, We use digital solutions to be more accessible",
+    "We know the demographic of our area, Our space is easy to book",
+    "Our space is easy to book, We are inclusive of all cultures"
+  ),
+  q1_what_do_you_do_to_make_your_place_low_waste = c(
+    "We know our local maunga, awa, We share our local history with our community, We use our local parks and areas for events, Our programmes connect our people to the natural environment",
+    NA,
+    "We know our local maunga, awa, We know who the local iwi are, We spend time at our local maunga (mountain) and awa (body of water), We share our local history with our community, We learn the local history from iwi, We use our local parks and areas for events, We grow our community’s connection with the local awa and maunga, We take time as team to be outside, Our programmes connect our people to the natural environment",
+    "We spend time at our local maunga (mountain) and awa (body of water), We share our local history with our community, We learn the local history from iwi, We use our local parks and areas for events",
+    "We know our local maunga, awa, We know who the local iwi are, We spend time at our local maunga (mountain) and awa (body of water)"
+  ),
+  q2_what_do_you_do_to_encourage_zero_waste_actions_and_behaviors = c(
+    "We know where our local community recycling centre is, We repair items before we replace them",
+    NA,
+    "We have completed the WasteWise E-learning, We know where our local community recycling centre is, We share the low waste event guide to people who hire our venue, We only buy new when we need to, We repair items before we replace them, We run or support repair café's, We ask our community when we need resources, We get access to equipment in a sustainable way I.e., rent or borrow, We no longer use single use items, We partner with people who align with our waste values",
+    "We have completed the WasteWise E-learning, We only buy new when we need to, We ask our community when we need resources, We partner with people who align with our waste values",
+    "We get access to equipment in a sustainable way I.e., rent or borrow, We no longer use single use items, We partner with people who align with our waste values"
+
+  ),
+  q3_what_do_you_do_to_promote_sustainable_commuting = c(
+    "I have completed a journey planner on how to get to work, We tell hirers how to get to our place by public transport",
+    NA,
+    "I have completed a journey planner on how to get to work, We promote walking and cycling around our community, We tell hirers how to get to our place by public transport, We promote where the nearest bikes rack is, We have a bike rack at our venue, We encourage carpooling to get to our place, our team carpools to work, We encourage active transport for our community’s wellbeing",
+    "I have completed a journey planner on how to get to work, We tell hirers how to get to our place by public transport, We have a bike rack at our venue, Our team carpools to work",
+    "I have completed a journey planner on how to get to work, We promote walking and cycling around our community, We tell hirers how to get to our place by public transport, We promote where the nearest bikes rack is, We have a bike rack at our venue"
+  ),
+  q4_what_are_you_doing_to_become_water_and_energy_efficient = c(
+    "We turn off our computers at night, We only heat room that are in use, We have agreed water and energy saving practices as a team",
+    NA,
+    "We turn off our computers at night, We turn lights off when not in the room, We only heat room that are in use, We turn appliances off at the wall, We share our energy saving tips with people who hirer our space, We have harvest rainwater, We buy energy efficient products when replacing is needed, We have agreed water and energy saving practices as a team, We teach our community how to save power and water at home, We share cost saving resources with our community",
+    "We turn off our computers at night, We only heat room that are in use, We turn appliances off at the wall, We share our energy saving tips with people who hirer our space, We buy energy efficient products when replacing is needed, We teach our community how to save power and water at home",
+    "We buy energy efficient products when replacing is needed, We have agreed water and energy saving practices as a team, We teach our community how to save power and water at home, We share cost saving resources with our community"
+  ),
+  q5_what_are_you_doing_to_reduce_your_carbon_emissions = c(
+    "We choose local vendors/ providers to reduce our emissions, We communicate what carbon emissions are to our community, We have personal carbon goals",
+    NA,
+    "None of these actions are applicable to us",
+    "We choose local vendors/ providers to reduce our emissions, We understand what carbon emissions are, We understand how to reduce our carbon emissions",
+    "We choose local vendors/ providers to reduce our emissions, We understand what carbon emissions are, We understand how to reduce our carbon emissions, We have built carbon reduction policy into hire agreements, We plan carbon reduction in our event plans"
+  ),
+  q6_what_are_you_doing_to_protect_and_restore_native_biodiversity = c(
+    "We know the local conservation groups in our area, We know about conservation projects in our area, We promote responsible pet ownership to our community, We trap pest in our local area",
+    NA,
+    "We know the local conservation groups in our area, We know about conservation projects in our area, We collaborate with local conservation groups, We promote responsible pet ownership to our community, We trap pest in our local area, We remove pest plants in our local area, We plant native plant species, We are cleaning up our local water ways, We connect our community with the natural environment",
+    "We promote responsible pet ownership to our community, We trap pest in our local area, We remove pest plants in our local area",
+    "We know the local conservation groups in our area, We know about conservation projects in our area, We collaborate with local conservation groups, We promote responsible pet ownership to our community, We trap pest in our local area, We remove pest plants in our local area, We plant native plant species, We are cleaning up our local water ways, We connect our community with the natural environment"
+  ),
+  q15_what_do_you_do_around_food_equity_and_sovereignty = c(
+    "We understand the barriers for food equity in our community, We use local & sustainable food vendors at events",
+    NA,
+    "We understand the barriers for food equity in our community, We know local food business/ enterprises in our area, We know our local foodbank organisations, We use local & sustainable food vendors at events, We host a food market / produce swap, We encourage community to use our kitchen facilities, Our community has a shared vision and goal for food, We support/ collaborate to make sure our community has access to fresh food",
+    "We encourage community to use our kitchen facilities, Our community has a shared vision and goal for food, We support/collaborate to make sure our community has access to fresh food",
+    "We use local & sustainable food vendors at events, We host a food market / produce swap, We encourage community to use our kitchen facilities, Our community has a shared vision and goal for food"
+  ),
+  q16_what_do_you_do_for_food_resilience_in_your_area = c(
+    "We share food network info & resources with our community, We partner with food resilience agencies",
+    NA,
+    "We share food network info & resources with our community, We partner with food resilience agencies, We support / volunteer at our local community food garden, We understand local food systems and our community need, We run workshops to understand and support local food systems",
+    "We support / volunteer at our local community food garden, We run workshops to understand and support local food systems",
+    "We support / volunteer at our local community food garden, We understand local food systems and our community need, We run workshops to understand and support local food systems, None of these actions are applicable to us"
+  ),
+  q17_what_do_you_do_around_food_cultures_and_traditions = c(
+    "We understand food cultures and traditions",
+    NA,
+    "We understand food cultures and traditions, We celebrate diverse food cultures and traditions, We support our community to express their own food cultures and traditions",
+    "We understand food cultures and traditions, We celebrate diverse food cultures and traditions, We support our community to express their own food cultures and traditions",
+    "We understand food cultures and traditions, We celebrate diverse food cultures and traditions, We support our community to express their own food cultures and traditions"
+  )
+)
+
+
+newsustainableplacesscorecard <- tibble::tibble(
+  timestamp = c(Sys.time()),
+  email_address = c("anewnetry@me.com"),
+  first_name = c("Hari"),
+  last_name = c("Seldon"),
+  your_facility = c("Imperial Library"),
+  q12_how_do_you_connect_with_the_whenua_surrounding_natural_environment = c("We know our local maunga, awa, We share our local history with our community, We use our local parks and areas for events, Our programmes connect our people to the natural environment"),
+  q13_what_do_you_do_to_grow_knowledge = c("We hold Te Ao Māori and Mātauranga Māori workshops, We have started our Te Tiriti training journey"),
+  q14_how_do_you_incorporate_te_reo_and_tikanga = c("We incorporate karakia (prayer/ blessing) and other practices into working life, We are on our on our te reo and tikanga journey"),
+  q7_how_are_you_building_sustainable_action = c("We take time as a team to talk and plan, We have a clear vision and kaupapa for our space, Our sustainable principles are built into our vendor/ tutor agreement, Sustainability is a priority in our strategy and delivery"),
+  q8_how_are_you_preparing_for_emergency_management = c("We have a business continuity plan, We have a personal safety plan, We have an emergency preparedness kit to allow the venue to keep operating"),
+  q9_what_do_you_do_to_support_social_enterprise_and_circular_economies = c("We have a list of local & social vendors available on request, We partner with social enterprises to deliver events and programmes"),
+  q10_how_do_you_know_you_are_having_impact = c("We understand how to set measures and outcomes for what we do, We share good news stories on social media, We share our learnings and success with others"),
+  q11_what_do_you_do_to_be_inclusive_and_accessible = c("We know the demographic of our area, Our space is easy to book"),
+  q1_what_do_you_do_to_make_your_place_low_waste = c("We know our local maunga, awa, We share our local history with our community, We use our local parks and areas for events, Our programmes connect our people to the natural environment"),
+  q2_what_do_you_do_to_encourage_zero_waste_actions_and_behaviors = c("We know where our local community recycling centre is, We repair items before we replace them"),
+  q3_what_do_you_do_to_promote_sustainable_commuting = c("I have completed a journey planner on how to get to work, We tell hirers how to get to our place by public transport"),
+  q4_what_are_you_doing_to_become_water_and_energy_efficient = c("We turn off our computers at night, We only heat room that are in use, We have agreed water and energy saving practices as a team"),
+  q5_what_are_you_doing_to_reduce_your_carbon_emissions = c("We choose local vendors/ providers to reduce our emissions, We communicate what carbon emissions are to our community, We have personal carbon goals"),
+  q6_what_are_you_doing_to_protect_and_restore_native_biodiversity = c("We know the local conservation groups in our area, We know about conservation projects in our area, We promote responsible pet ownership to our community, We trap pest in our local area"),
+  q15_what_do_you_do_around_food_equity_and_sovereignty = c("We understand the barriers for food equity in our community, We use local & sustainable food vendors at events"),
+  q16_what_do_you_do_for_food_resilience_in_your_area = c("We share food network info & resources with our community, We partner with food resilience agencies"),
+  q17_what_do_you_do_around_food_cultures_and_traditions = c("We understand food cultures and traditions")
+)
+
+usethis::use_data(
+  sustainableplacesmetadata,
+  sustainableplacesscorecard,
+  newsustainableplacesscorecard,
+  overwrite = TRUE
+  )

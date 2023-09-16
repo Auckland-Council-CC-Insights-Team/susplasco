@@ -4,16 +4,19 @@
 \alias{get_data}
 \title{Get Newly-Submitted Data For Scoring}
 \usage{
-get_data(cols_to_keep, metadata_filepath = NULL, test = FALSE)
+get_data(cols_to_keep, url = NULL, metadata_filepath = NULL)
 }
 \arguments{
 \item{cols_to_keep}{Columns to keep in addition to the actions (or
 multi-choice options), passed using \link[dplyr]{dplyr_tidy_select}.}
 
-\item{metadata_filepath}{Filepath to the CSV file where the metadata is
-stored.}
+\item{url}{The URL to the Google Sheet where the data is stored. By default,
+this is set to NULL and will return a fake dataset of Sustainable Places
+Framework form submissions.}
 
-\item{test}{Read from the test files? Default is \code{FALSE}.}
+\item{metadata_filepath}{Filepath to the CSV file where the metadata is
+stored. By default, this is set to NULL and will return the Sustainable
+Places Framework scorecard metadata.}
 }
 \value{
 A tibble.
@@ -22,8 +25,8 @@ A tibble.
 Get Newly-Submitted Data For Scoring
 }
 \examples{
-# In this example, the Sustainable Place metadata that comes shipped with the
-# package would be used.
+# In this example, the Sustainable Place data and metadata that comes shipped
+# with the package would be used.
 \dontrun{
 get_data(cols_to_keep = timestamp:your_facility)
 }
