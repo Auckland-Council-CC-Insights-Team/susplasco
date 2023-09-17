@@ -1,31 +1,24 @@
-#' Return An Answer As A Binary Value
+#' Remove Question Numbers From Column Names
 #'
-#' @description For a multi-choice option in a question in the form, mark it as
-#'   either 1 (selected) or 0 (not selected).
+#' @description The text of the questions in the Google Form are stored in the
+#'   Google Sheet as column names. To retrieve the actual text of the questions,
+#'   this function removes the question numbers which are prefixed to these in
+#'   the column names.
 #'
-#' @param data A dataframe containing the form responses.
-#' @param new_column_name The name of the new column which contains the binary
-#'   value.
-#' @param target_column The name of the column which holds the question's
-#'   multi-choice options.
-#' @param option_text The text of the multi-choice option against which we will
-#'   assign a binary value.
 #'
-#' @return A tibble with one column (whose name is passed as new_col_name)
-#'   and one row (either a 1 or a 0).
+#' @param path_to_data Path to RDS file containing the Google Sheets data, or
+#'   the exported dummy data.
+#'
+#' @return A tibble.
 #'
 #' @noRd
-is_option_selected <- function(data, new_col_name, target_column, option_text){
-  data_with_column <- data |>
-    mutate(
-      {{new_col_name}} := if_else(
-        !is.na(!!dplyr::sym(target_column)) & str_detect(!!dplyr::sym(
-          target_column), fixed(option_text)),
-        1,
-        0)) |>
-    select({{new_col_name}})
+clean_google_sheet_data <- function(path_to_data) {
+  g_sheet_import <- get_updated_data(path_to_data)
 
-  return(data_with_column)
+  g_sheet_data <- g_sheet_import |>
+    dplyr::rename_with(~word(.x, 2, -1, sep = fixed("_")), starts_with("q"))
+
+  return(g_sheet_data)
 }
 
 
@@ -57,4 +50,35 @@ get_question_answers <- function(data, metadata_filepath = NULL, ...) {
     bind_and_tibble(data, ...)
 
   return(data_binaries)
+}
+
+
+#' Return An Answer As A Binary Value
+#'
+#' @description For a multi-choice option in a question in the form, mark it as
+#'   either 1 (selected) or 0 (not selected).
+#'
+#' @param data A dataframe containing the form responses.
+#' @param new_column_name The name of the new column which contains the binary
+#'   value.
+#' @param target_column The name of the column which holds the question's
+#'   multi-choice options.
+#' @param option_text The text of the multi-choice option against which we will
+#'   assign a binary value.
+#'
+#' @return A tibble with one column (whose name is passed as new_col_name)
+#'   and one row (either a 1 or a 0).
+#'
+#' @noRd
+is_option_selected <- function(data, new_col_name, target_column, option_text){
+  data_with_column <- data |>
+    mutate(
+      {{new_col_name}} := if_else(
+        !is.na(!!dplyr::sym(target_column)) & str_detect(!!dplyr::sym(
+          target_column), fixed(option_text)),
+        1,
+        0)) |>
+    select({{new_col_name}})
+
+  return(data_with_column)
 }

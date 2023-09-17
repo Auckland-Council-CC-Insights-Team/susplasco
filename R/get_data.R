@@ -1,27 +1,3 @@
-#' Remove Question Numbers From Column Names
-#'
-#' @description The text of the questions in the Google Form are stored in the
-#'   Google Sheet as column names. To retrieve the actual text of the questions,
-#'   this function removes the question numbers which are prefixed to these in
-#'   the column names.
-#'
-#'
-#' @param path_to_data Path to RDS file containing the Google Sheets data, or
-#'   the exported dummy data.
-#'
-#' @return A tibble.
-#'
-#' @noRd
-clean_google_sheet_data <- function(path_to_data) {
-  g_sheet_import <- get_updated_data(path_to_data)
-
-  g_sheet_data <- g_sheet_import |>
-    dplyr::rename_with(~word(.x, 2, -1, sep = fixed("_")), starts_with("q"))
-
-  return(g_sheet_data)
-}
-
-
 #' Read Google Sheet Data And Save It To RDS
 #'
 #' @description To determine whether or not new reports should be rendered, we
