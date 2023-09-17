@@ -48,3 +48,11 @@ test_that("the default metadata is returned successfully", {
 
   expect_equal(colnames(metadata), metadata_cols)
 })
+
+test_that("the correct path to the new submissions data is returned", {
+  test_live <- get_updated_data(path_to_data = "live")
+  test_snapshot <- get_updated_data(path_to_data = "snapshot")
+
+  expect_equal(test_live |> nrow(), 1)
+  expect_equal(test_snapshot |> nrow(), 5)
+})
