@@ -3,6 +3,7 @@
 
 ## usethis namespace: start
 #' @importFrom assertr verify
+#' @importFrom dplyr anti_join
 #' @importFrom dplyr if_else
 #' @importFrom dplyr mutate
 #' @importFrom dplyr pull

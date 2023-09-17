@@ -6,20 +6,14 @@
 #'   the column names.
 #'
 #'
-#' @param g_sheet_import Path to RDS file containing the Google Sheets data, or
+#' @param path_to_data Path to RDS file containing the Google Sheets data, or
 #'   the exported dummy data.
 #'
 #' @return A tibble.
 #'
 #' @noRd
-clean_google_sheet_data <- function(g_sheet_import) {
-  if(g_sheet_import == "live") {
-    g_sheet_import <- newsustainableplacesscorecard
-  } else if(g_sheet_import == "snapshot") {
-    g_sheet_import <- sustainableplacesscorecard
-  } else {
-    g_sheet_import <- readRDS(g_sheet_import)
-  }
+clean_google_sheet_data <- function(path_to_data) {
+  g_sheet_import <- get_updated_data(path_to_data)
 
   g_sheet_data <- g_sheet_import |>
     dplyr::rename_with(~word(.x, 2, -1, sep = fixed("_")), starts_with("q"))
@@ -38,12 +32,14 @@ clean_google_sheet_data <- function(g_sheet_import) {
 #'
 #' @param url The URL to the Google Sheet where the data is stored. By default,
 #'   this points to the Sustainable Place Framework scorecard data.
+#' @param save_path Directory path to where the RDS file will be saved under the
+#'   name "scorecard_updated.rds".
 #'
 #' @return A string pointing to the file path where the RDS file has been saved.
 #'
 #' @noRd
-get_live_data <- function(url) {
-  save_path <- paste0(tere::get_file_storage_path(), "/scorecard_updated.rds")
+get_live_data <- function(url, save_path = tere::get_file_storage_path()) {
+  save_path <- paste0(save_path, "/scorecard_updated.rds")
 
   g_sheet_import_file <- googlesheets4::read_sheet(url) |>
     clean_names()
@@ -68,10 +64,10 @@ get_live_data <- function(url) {
 #' get_metadata()
 get_metadata <- function(metadata_filepath = NULL) {
   if(is.null(metadata_filepath)) {
-    metadata <- sustainableplacesmetadata
-  } else {
-    metadata <- readr::read_csv(metadata_filepath, col_types = "c")
+    return(sustainableplacesmetadata)
   }
+
+  metadata <- readr::read_csv(metadata_filepath, col_types = "c")
 
   return(metadata)
 }
@@ -94,9 +90,7 @@ get_new_submissions <- function(url = NULL) {
   live_data <- data[[1]]
   archived_data <- data[[2]]
 
-  new_submissions <- suppressMessages(
-    dplyr::anti_join(live_data, archived_data)
-    ) |>
+  new_submissions <- suppressMessages(anti_join(live_data, archived_data)) |>
     verify_new_submissions()
 
   return(new_submissions)
@@ -117,17 +111,9 @@ get_new_submissions <- function(url = NULL) {
 #'
 #' @export
 get_raw_data <- function(url = NULL) {
-  live_data <- ifelse(
-    is.null(url),
-    "live",
-    get_live_data(url)
-  )
+  live_data <- ifelse(is.null(url), "live", get_live_data(url))
 
-  snapshot_data <- ifelse(
-    is.null(url),
-    "snapshot",
-    get_snapshot_data()
-  )
+  snapshot_data <- ifelse(is.null(url), "snapshot", get_snapshot_data())
 
   data <- map(c(live_data, snapshot_data), clean_google_sheet_data)
 
@@ -150,4 +136,24 @@ get_snapshot_data <- function() {
   g_sheet_import <- paste0(tere::get_file_storage_path(), "/scorecard.rds")
 
   return(g_sheet_import)
+}
+
+
+#' Read New Submissions Data
+#'
+#' @param path_to_data Path to where the new submissions data is held, either in
+#'   a RDS file or, for testing purposes, in data that is exported with this
+#'   package.
+#'
+#' @return A tibble.
+#'
+#' @noRd
+get_updated_data <- function(path_to_data) {
+  if(path_to_data == "live") {
+    return(susplasco::newsustainableplacesscorecard)
+  } else if(path_to_data == "snapshot") {
+    return(susplasco::sustainableplacesscorecard)
+  } else {
+    return(readRDS(path_to_data))
+  }
 }
