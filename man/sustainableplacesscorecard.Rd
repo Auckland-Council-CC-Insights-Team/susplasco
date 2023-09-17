@@ -15,10 +15,10 @@ columns:
 \item{last_name}{Last name as supplied via the form submission}
 \item{your_facility}{Facility name as supplied via the form submission}
 \item{q12_how_do_you_connect_with_the_whenua_surrounding_natural_environment}
-{Question 12}
-\item{q13_what_do_you_do_to_grow_knowledge}{Question 13}
-\item{q14_how_do_you_incorporate_te_reo_and_tikanga}{Question 14}
-\item{q7_how_are_you_building_sustainable_action}{Question 7}
+{Question 12: how do you connect with the whenua/surrounding natural environment?}
+\item{q13_what_do_you_do_to_grow_knowledge}{Question 13: what do you do to grow knowledge?}
+\item{q14_how_do_you_incorporate_te_reo_and_tikanga}{Question 14: how do you incorporate te reo and tikanga?}
+\item{q7_how_are_you_building_sustainable_action}{Question 7: how are you building sustainable action?}
 \item{q8_how_are_you_preparing_for_emergency_management}{Question 8: how are you preparing for emergency management?}
 \item{q9_what_do_you_do_to_support_social_enterprise_and_circular_economies}{Question 9}
 \item{q10_how_do_you_know_you_are_having_impact}{Question 10}
