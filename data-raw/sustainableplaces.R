@@ -838,28 +838,80 @@ sustainableplacesscorecard <- tibble::tibble(
 
 newsustainableplacesscorecard <- tibble::tibble(
   timestamp = c(Sys.time()),
-  email_address = c("anewnetry@me.com"),
-  first_name = c("Hari"),
-  last_name = c("Seldon"),
-  your_facility = c("Imperial Library"),
-  q12_how_do_you_connect_with_the_whenua_surrounding_natural_environment = c("We know our local maunga, awa, We share our local history with our community, We use our local parks and areas for events, Our programmes connect our people to the natural environment"),
-  q13_what_do_you_do_to_grow_knowledge = c("We hold Te Ao Māori and Mātauranga Māori workshops, We have started our Te Tiriti training journey"),
-  q14_how_do_you_incorporate_te_reo_and_tikanga = c("We incorporate karakia (prayer/ blessing) and other practices into working life, We are on our on our te reo and tikanga journey"),
-  q7_how_are_you_building_sustainable_action = c("We take time as a team to talk and plan, We have a clear vision and kaupapa for our space, Our sustainable principles are built into our vendor/ tutor agreement, Sustainability is a priority in our strategy and delivery"),
-  q8_how_are_you_preparing_for_emergency_management = c("We have a business continuity plan, We have a personal safety plan, We have an emergency preparedness kit to allow the venue to keep operating"),
-  q9_what_do_you_do_to_support_social_enterprise_and_circular_economies = c("We have a list of local & social vendors available on request, We partner with social enterprises to deliver events and programmes"),
-  q10_how_do_you_know_you_are_having_impact = c("We understand how to set measures and outcomes for what we do, We share good news stories on social media, We share our learnings and success with others"),
-  q11_what_do_you_do_to_be_inclusive_and_accessible = c("We know the demographic of our area, Our space is easy to book"),
-  q1_what_do_you_do_to_make_your_place_low_waste = c("We know our local maunga, awa, We share our local history with our community, We use our local parks and areas for events, Our programmes connect our people to the natural environment"),
-  q2_what_do_you_do_to_encourage_zero_waste_actions_and_behaviors = c("We know where our local community recycling centre is, We repair items before we replace them"),
-  q3_what_do_you_do_to_promote_sustainable_commuting = c("I have completed a journey planner on how to get to work, We tell hirers how to get to our place by public transport"),
-  q4_what_are_you_doing_to_become_water_and_energy_efficient = c("We turn off our computers at night, We only heat room that are in use, We have agreed water and energy saving practices as a team"),
-  q5_what_are_you_doing_to_reduce_your_carbon_emissions = c("We choose local vendors/ providers to reduce our emissions, We communicate what carbon emissions are to our community, We have personal carbon goals"),
-  q6_what_are_you_doing_to_protect_and_restore_native_biodiversity = c("We know the local conservation groups in our area, We know about conservation projects in our area, We promote responsible pet ownership to our community, We trap pest in our local area"),
-  q15_what_do_you_do_around_food_equity_and_sovereignty = c("We understand the barriers for food equity in our community, We use local & sustainable food vendors at events"),
-  q16_what_do_you_do_for_food_resilience_in_your_area = c("We share food network info & resources with our community, We partner with food resilience agencies"),
-  q17_what_do_you_do_around_food_cultures_and_traditions = c("We understand food cultures and traditions")
-)
+  email_address = c("anewnetry@me.com", "waititi@waititiproductions.com"),
+  first_name = c("Hari", "Taika"),
+  last_name = c("Seldon", "Waititi"),
+  your_facility = c("Imperial Library", ""),
+  q12_how_do_you_connect_with_the_whenua_surrounding_natural_environment = c(
+    "We know our local maunga, awa, We share our local history with our community, We use our local parks and areas for events, Our programmes connect our people to the natural environment",
+    "We share our local history with our community, Our programmes connect our people to the natural environment"
+    ),
+  q13_what_do_you_do_to_grow_knowledge = c(
+    "We hold Te Ao Māori and Mātauranga Māori workshops, We have started our Te Tiriti training journey",
+    "We hold Te Ao Māori and Mātauranga Māori workshops, We have started our Te Tiriti training journey"
+    ),
+  q14_how_do_you_incorporate_te_reo_and_tikanga = c(
+    "We incorporate karakia (prayer/ blessing) and other practices into working life, We are on our on our te reo and tikanga journey",
+    "We are on our on our te reo and tikanga journey"
+    ),
+  q7_how_are_you_building_sustainable_action = c(
+    "We take time as a team to talk and plan, We have a clear vision and kaupapa for our space, Our sustainable principles are built into our vendor/ tutor agreement, Sustainability is a priority in our strategy and delivery",
+    "We take time as a team to talk and plan, Sustainability is a priority in our strategy and delivery"
+    ),
+  q8_how_are_you_preparing_for_emergency_management = c(
+    "We have a business continuity plan, We have a personal safety plan, We have an emergency preparedness kit to allow the venue to keep operating",
+    "We have an emergency preparedness kit to allow the venue to keep operating"
+    ),
+  q9_what_do_you_do_to_support_social_enterprise_and_circular_economies = c(
+    "We have a list of local & social vendors available on request, We partner with social enterprises to deliver events and programmes",
+    "We have a list of local & social vendors available on request, We partner with social enterprises to deliver events and programmes"
+    ),
+  q10_how_do_you_know_you_are_having_impact = c(
+    "We understand how to set measures and outcomes for what we do, We share good news stories on social media, We share our learnings and success with others",
+    "We understand how to set measures and outcomes for what we do, We share good news stories on social media"
+    ),
+  q11_what_do_you_do_to_be_inclusive_and_accessible = c(
+    "We know the demographic of our area, Our space is easy to book",
+    "We know the demographic of our area"
+    ),
+  q1_what_do_you_do_to_make_your_place_low_waste = c(
+    "We know our local maunga, awa, We share our local history with our community, We use our local parks and areas for events, Our programmes connect our people to the natural environment",
+    "We know our local maunga, awa, We share our local history with our community, We use our local parks and areas for events"
+    ),
+  q2_what_do_you_do_to_encourage_zero_waste_actions_and_behaviors = c(
+    "We know where our local community recycling centre is, We repair items before we replace them",
+    "We know where our local community recycling centre is"
+    ),
+  q3_what_do_you_do_to_promote_sustainable_commuting = c(
+    "I have completed a journey planner on how to get to work, We tell hirers how to get to our place by public transport",
+    "I have completed a journey planner on how to get to work, We tell hirers how to get to our place by public transport"
+    ),
+  q4_what_are_you_doing_to_become_water_and_energy_efficient = c(
+    "We turn off our computers at night, We only heat room that are in use, We have agreed water and energy saving practices as a team",
+    "We turn off our computers at night, We only heat room that are in use"
+    ),
+  q5_what_are_you_doing_to_reduce_your_carbon_emissions = c(
+    "We choose local vendors/ providers to reduce our emissions, We communicate what carbon emissions are to our community, We have personal carbon goals",
+    "We choose local vendors/ providers to reduce our emissions"
+    ),
+  q6_what_are_you_doing_to_protect_and_restore_native_biodiversity = c(
+    "We know the local conservation groups in our area, We know about conservation projects in our area, We promote responsible pet ownership to our community, We trap pest in our local area",
+    "We know the local conservation groups in our area, We know about conservation projects in our area"
+    ),
+  q15_what_do_you_do_around_food_equity_and_sovereignty = c(
+    "We understand the barriers for food equity in our community, We use local & sustainable food vendors at events",
+    "We understand the barriers for food equity in our community, We use local & sustainable food vendors at events"
+    ),
+  q16_what_do_you_do_for_food_resilience_in_your_area = c(
+    "We share food network info & resources with our community, We partner with food resilience agencies",
+    "We share food network info & resources with our community"
+    ),
+  q17_what_do_you_do_around_food_cultures_and_traditions = c(
+    "We understand food cultures and traditions",
+    "We understand food cultures and traditions"
+    )
+) |>
+  dplyr::bind_rows(sustainableplacesscorecard)
 
 usethis::use_data(
   sustainableplacesmetadata,

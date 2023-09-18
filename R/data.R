@@ -76,7 +76,7 @@
 #' live data. This particular data represents a new entry submitted through the
 #' form since reports were last rendered.
 #'
-#' @format ## `newsustainableplacesscorecard` A data frame with 1 row and 22
+#' @format ## `newsustainableplacesscorecard` A data frame with 2 row2 and 22
 #'   columns:
 #' \describe{
 #'   \item{timestamp}{Date and time when the form was submitted.}

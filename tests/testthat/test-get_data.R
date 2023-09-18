@@ -29,14 +29,14 @@ test_that("we can return the live data and the snapshot data as a list of tibble
   raw_data <- get_raw_data()
 
   expect_type(raw_data, "list")
-  expect_equal(raw_data[[1]] |> pull(email_address), "anewnetry@me.com")
+  expect_equal(raw_data[[1]] |> filter(last_name == "Waititi") |> pull(email_address), "waititi@waititiproductions.com")
 })
 
 
 test_that("the new submissions from the form are returned", {
   new_submission_expected <- get_new_submissions()
 
-  expect_equal(new_submission_expected$last_name, "Seldon")
+  expect_equal(new_submission_expected$last_name, c("Seldon", "Waititi"))
 })
 
 
@@ -53,6 +53,6 @@ test_that("the correct path to the new submissions data is returned", {
   test_live <- get_updated_data(path_to_data = "live")
   test_snapshot <- get_updated_data(path_to_data = "snapshot")
 
-  expect_equal(test_live |> nrow(), 1)
+  expect_equal(test_live |> nrow(), 7)
   expect_equal(test_snapshot |> nrow(), 5)
 })

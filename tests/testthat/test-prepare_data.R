@@ -30,5 +30,5 @@ test_that("a multi-choice option is converted to binary", {
     "We use our local parks and areas for events"
     )
 
-  expect_equal(binary$tt_1f, 1)
+  expect_equal(binary$tt_1f, c(1, 0, 1, 0, 1, 1, 0))
 })
