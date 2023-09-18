@@ -22,6 +22,28 @@ clean_google_sheet_data <- function(path_to_data) {
 }
 
 
+get_overall_score <- function(data, metadata_filepath, score_lvl) {
+  metadata <- get_metadata(metadata_filepath)
+
+  denom_name <- paste0(score_lvl, "_denominator")
+  score_name <- paste0(score_lvl, "_score")
+  perc_name <- paste0(score_lvl, "_percentage")
+
+  score <- prep_scoring_data(data, score_lvl) |>
+    left_join(
+      get_pou_denominators(metadata, {{denom_name}}, score_lvl),
+      by = "pou") |>
+    summarise(
+      {{score_name}} := sum(score),
+      .by = c(timestamp:your_facility, pou, {{denom_name}})
+    ) |>
+    mutate({{perc_name}} := !!sym(score_name)/!!sym(denom_name)) |>
+    get_category(score_lvl)
+
+  return(score)
+}
+
+
 #' Convert Tickbox Selections To Binary Values
 #'
 #' @param data A dataframe containing the responses from the Google Form,
