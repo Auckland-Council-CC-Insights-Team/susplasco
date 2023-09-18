@@ -15,11 +15,14 @@
 #' @importFrom janitor clean_names
 #' @importFrom janitor make_clean_names
 #' @importFrom purrr map
+#' @importFrom purrr map2
 #' @importFrom purrr pmap
 #' @importFrom rlang :=
 #' @importFrom stringr fixed
 #' @importFrom stringr str_detect
+#' @importFrom stringr str_to_lower
 #' @importFrom stringr word
 #' @importFrom tibble tibble
+#' @importFrom tidyr pivot_longer
 ## usethis namespace: end
 NULL

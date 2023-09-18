@@ -22,28 +22,6 @@ clean_google_sheet_data <- function(path_to_data) {
 }
 
 
-get_overall_score <- function(data, metadata_filepath, score_lvl) {
-  metadata <- get_metadata(metadata_filepath)
-
-  denom_name <- paste0(score_lvl, "_denominator")
-  score_name <- paste0(score_lvl, "_score")
-  perc_name <- paste0(score_lvl, "_percentage")
-
-  score <- prep_scoring_data(data, score_lvl) |>
-    left_join(
-      get_pou_denominators(metadata, {{denom_name}}, score_lvl),
-      by = "pou") |>
-    summarise(
-      {{score_name}} := sum(score),
-      .by = c(timestamp:your_facility, pou, {{denom_name}})
-    ) |>
-    mutate({{perc_name}} := !!sym(score_name)/!!sym(denom_name)) |>
-    get_category(score_lvl)
-
-  return(score)
-}
-
-
 #' Convert Tickbox Selections To Binary Values
 #'
 #' @param data A dataframe containing the responses from the Google Form,
@@ -72,64 +50,6 @@ get_question_answers <- function(data, metadata_filepath = NULL, ...) {
     bind_and_tibble(data, ...)
 
   return(data_binaries)
-}
-
-
-#' Calculate Scores Across All Questions
-#'
-#' @description For each question, calculate how many options were selected by
-#'   the user in total.
-#'
-#' @param data A dataframe which contains, at minimum, a column for each
-#'   multi-choice selection expressed as either 1 or 0.
-#' @param metadata_filepath The filepath to a CSV file containing the metadata
-#'   for the online form.
-#' @param ... Key-value pairs passed to select(...).
-#'
-#' @return A tibble.
-#'
-#' @export
-get_question_scores <- function(data, metadata_filepath = NULL, ...) {
-  id <- NULL
-
-  metadata <- get_metadata(metadata_filepath)
-  question_ids <- dplyr::distinct(metadata, id) |> pull(id)
-
-  question_scores <- map(question_ids, ~get_question_score(data, .x, metadata)) |>
-    bind_and_tibble(data, ...)
-
-  return(question_scores)
-}
-
-
-#' Calculate Score For A Single Question
-#'
-#' @param data A dataframe which contains, at minimum, a column for each
-#'   multi-choice selection expressed as either 1 or 0.
-#' @param question_id The unique ID of the question for which a score will be
-#'   calculated, taken from the form metadata.
-#' @param metadata A dataframe containing the metadata for the online form from
-#'   which the question IDs are derived.
-#'
-#' @return A tibble with one column and one row.
-#'
-#' @noRd
-get_question_score <- function(data, question_id, metadata) {
-  id <- sub_id <- NULL
-
-  cols_to_score <- metadata |>
-    filter(id == {{question_id}}) |>
-    pull(sub_id)
-
-  new_col_name <- paste0(question_id, "_score")
-
-  score <- data |>
-    mutate(
-      {{new_col_name}} := rowSums(across(tidyselect::any_of(cols_to_score)))
-    ) |>
-    select(tidyselect::all_of(new_col_name))
-
-  return(score)
 }
 
 
