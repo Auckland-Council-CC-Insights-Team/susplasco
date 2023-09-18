@@ -16,7 +16,7 @@ test_that("the total number of actions selected for a given question returns as 
 })
 
 
-test_that("the total number of status-specific actions selected across each Pou returns as expected", {
+test_that("the total number of status-specific actions selected across each Pou return as expected", {
   data <- get_data()
   status_scores <- get_status_scores(data)
   total_status_scores <- status_scores |>
@@ -25,4 +25,13 @@ test_that("the total number of status-specific actions selected across each Pou 
     pull(score)
 
   expect_equal(total_status_scores, 41)
+})
+
+
+test_that("the total number of actions selected for a given status within a given Pou return as expected", {
+  data <- get_data()
+  metadata <- get_metadata()
+  status_score <- get_status_score(data, metadata, pou = "Te Tiriti", status = "Leader")
+
+  expect_equal(status_score$te_tiriti_leader_score, 5)
 })

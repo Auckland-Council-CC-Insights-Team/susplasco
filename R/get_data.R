@@ -66,8 +66,7 @@ get_new_submissions <- function(url = NULL) {
   live_data <- data[[1]]
   archived_data <- data[[2]]
 
-  new_submissions <- suppressMessages(anti_join(live_data, archived_data)) |>
-    verify_new_submissions()
+  new_submissions <- suppressMessages(anti_join(live_data, archived_data))
 
   return(new_submissions)
 }
