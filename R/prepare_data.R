@@ -53,6 +53,64 @@ get_question_answers <- function(data, metadata_filepath = NULL, ...) {
 }
 
 
+#' Calculate Scores Across All Questions
+#'
+#' @description For each question, calculate how many options were selected by
+#'   the user in total.
+#'
+#' @param data A dataframe which contains, at minimum, a column for each
+#'   multi-choice selection expressed as either 1 or 0.
+#' @param metadata_filepath The filepath to a CSV file containing the metadata
+#'   for the online form.
+#' @param ... Key-value pairs passed to select(...).
+#'
+#' @return A tibble.
+#'
+#' @export
+get_question_scores <- function(data, metadata_filepath = NULL, ...) {
+  id <- NULL
+
+  metadata <- get_metadata(metadata_filepath)
+  question_ids <- dplyr::distinct(metadata, id) |> pull(id)
+
+  question_scores <- map(question_ids, ~get_question_score(data, .x, metadata)) |>
+    bind_and_tibble(data, ...)
+
+  return(question_scores)
+}
+
+
+#' Calculate Score For A Single Question
+#'
+#' @param data A dataframe which contains, at minimum, a column for each
+#'   multi-choice selection expressed as either 1 or 0.
+#' @param question_id The unique ID of the question for which a score will be
+#'   calculated, taken from the form metadata.
+#' @param metadata A dataframe containing the metadata for the online form from
+#'   which the question IDs are derived.
+#'
+#' @return A tibble with one column and one row.
+#'
+#' @noRd
+get_question_score <- function(data, question_id, metadata) {
+  id <- sub_id <- NULL
+
+  cols_to_score <- metadata |>
+    filter(id == {{question_id}}) |>
+    pull(sub_id)
+
+  new_col_name <- paste0(question_id, "_score")
+
+  score <- data |>
+    mutate(
+      {{new_col_name}} := rowSums(across(tidyselect::any_of(cols_to_score)))
+    ) |>
+    select(tidyselect::all_of(new_col_name))
+
+  return(score)
+}
+
+
 #' Return An Answer As A Binary Value
 #'
 #' @description For a multi-choice option in a question in the form, mark it as

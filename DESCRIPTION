@@ -24,7 +24,8 @@ Imports:
     rlang,
     stringr,
     tere,
-    tibble
+    tibble,
+    tidyselect
 Suggests: 
     testthat (>= 3.0.0),
     mockery (>= 0.4.3)
