@@ -13,7 +13,7 @@ multi-choice selection expressed as either 1 or 0.}
 \item{metadata_filepath}{The filepath to a CSV file containing the metadata
 for the online form.}
 
-\item{Key-value}{pairs passed to select(...).}
+\item{...}{Key-value pairs passed to select(...).}
 }
 \value{
 A tibble.

@@ -24,3 +24,33 @@ get_data <- function(cols_to_keep, url = NULL, metadata_filepath = NULL) {
 
   return(g_sheet_binaries)
 }
+
+
+#' Calculate All Scores Needed For Scorecard
+#'
+#' @param data A dataframe containing, ar minimum, binary values indicating
+#'   which actions were selected.
+#' @param metadata_path Filepath to the CSV file where the metadata is stored.
+#'   By default, this is set to NULL and will return the Sustainable Places
+#'   Framework scorecard metadata.
+#' @param ... Key-value pairs determining which columns, aside from `id`, are
+#'   retained from `data`.
+#'
+#' @return A tibble.
+
+#' @export
+get_scores <- function(data, metadata_path = NULL, ...) {
+  # Score each question based on the binary values
+  question_scores <- get_question_scores(data, metadata_path, ...)
+
+  # Score for each status of Activator, Champion, and Leader
+  status_scores <- get_status_scores(data, metadata_path, ...)
+
+  # Total score for final category (Activator or Leader) per Pou, absolute and percentage
+  category_scores <- get_overall_score(status_scores, metadata_path, ...)
+
+  # Combine all scores into one dataframe
+  all_scores <- get_all_scores(category_scores, question_scores)
+
+  return(all_scores)
+}

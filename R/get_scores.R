@@ -1,4 +1,37 @@
-get_overall_score <- function(data, metadata_filepath = NULL) {
+#' Join Action Scores With Category Scores
+#'
+#' @param category_scores Dataframe containing the category scores for each Pou.
+#' @param question_scores Dataframe containing the number of actions selected
+#'   for each question.
+#'
+#' @return A tibble.
+#'
+#' @noRd
+get_all_scores <- function(category_scores, question_scores) {
+  all_scores <- category_scores |>
+    left_join(question_scores, by = c("id"))
+
+  return(all_scores)
+}
+
+
+#' Calculate Category Score For Each Pou
+#'
+#' @description Count the total number of "Leader" and "Champion" actions
+#'   selected for each Pou. If this value is at least 80% of the total number of
+#'   "Leader" and "Champion" actions available for that Pou, assign a final
+#'   category of "Leader", otherwise assign a final category of "Activator".
+#'
+#' @param data Dataframe containing the score for each status ("Activator",
+#'   "Leader", or "Champion") for each Pou.
+#' @param metadata_filepath The filepath to a CSV file containing the metadata
+#'   for the online form.
+#' @param ... Key-value pairs passed to summarise(...).
+#'
+#' @return A tibble.
+#'
+#' @export
+get_overall_score <- function(data, metadata_filepath = NULL, ...) {
   metadata <- get_metadata(metadata_filepath)
 
   score <- data |>
@@ -10,7 +43,7 @@ get_overall_score <- function(data, metadata_filepath = NULL) {
       by = "pou") |>
     summarise(
       category_score = sum(score),
-      .by = c(id, pou, category_denominator)
+      .by = c(id, pou, category_denominator, ...)
     ) |>
     mutate(
       category_percentage = category_score/category_denominator,
@@ -110,7 +143,7 @@ get_question_scores <- function(data, metadata_filepath = NULL, ...) {
 #'   multi-choice selection expressed as either 1 or 0.
 #' @param metadata_filepath The filepath to a CSV file containing the metadata
 #'   for the online form.
-#' @param Key-value pairs passed to select(...).
+#' @param ... Key-value pairs passed to select(...).
 #'
 #' @return A tibble.
 
