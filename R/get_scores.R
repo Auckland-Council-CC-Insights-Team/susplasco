@@ -1,27 +1,43 @@
-#' Calculate Scores Across All Questions
-#'
-#' @description For each question, calculate how many options were selected by
-#'   the user in total.
-#'
-#' @param data A dataframe which contains, at minimum, a column for each
-#'   multi-choice selection expressed as either 1 or 0.
-#' @param metadata_filepath The filepath to a CSV file containing the metadata
-#'   for the online form.
-#' @param ... Key-value pairs passed to select(...).
-#'
-#' @return A tibble.
-#'
-#' @export
-get_question_scores <- function(data, metadata_filepath = NULL, ...) {
-  id <- NULL
-
+get_overall_score <- function(data, metadata_filepath = NULL) {
   metadata <- get_metadata(metadata_filepath)
-  question_ids <- dplyr::distinct(metadata, id) |> pull(id)
 
-  question_scores <- map(question_ids, ~get_question_score(data, .x, metadata)) |>
-    bind_and_tibble(data, ...)
+  score <- data |>
+    filter(
+      if_any(matches("(?i)^status$"), ~!(. %in% c("activator", "Activator")))
+      ) |>
+    left_join(
+      get_pou_denominators(metadata),
+      by = "pou") |>
+    summarise(
+      category_score = sum(score),
+      .by = c(pou, category_denominator)
+    ) |>
+    mutate(
+      category_percentage = category_score/category_denominator,
+      final_category = if_else(category_percentage >= 0.8, "Leader", "Activator")
+    )
 
-  return(question_scores)
+  return(score)
+}
+
+
+#' Count Total Questions Per Pou
+#'
+#' @param metadata A dataframe containing the metadata for the online form from
+#'   which the Pou and their questions are derived.
+#'
+#' @return A tibble with two columns.
+#'
+#' @noRd
+get_pou_denominators <- function(metadata) {
+  denominator <- metadata |>
+    filter(
+      if_any(matches("(?i)^status$"), ~!(. %in% c("activator", "Activator")))
+    ) |>
+    dplyr::with_groups(Pou, summarise, category_denominator = dplyr::n()) |>
+    mutate(pou = make_clean_names(Pou), .keep = "unused")
+
+  return(denominator)
 }
 
 
@@ -53,6 +69,33 @@ get_question_score <- function(data, question_id, metadata) {
     select(tidyselect::all_of(new_col_name))
 
   return(score)
+}
+
+
+#' Calculate Scores Across All Questions
+#'
+#' @description For each question, calculate how many options were selected by
+#'   the user in total.
+#'
+#' @param data A dataframe which contains, at minimum, a column for each
+#'   multi-choice selection expressed as either 1 or 0.
+#' @param metadata_filepath The filepath to a CSV file containing the metadata
+#'   for the online form.
+#' @param ... Key-value pairs passed to select(...).
+#'
+#' @return A tibble.
+#'
+#' @export
+get_question_scores <- function(data, metadata_filepath = NULL, ...) {
+  id <- NULL
+
+  metadata <- get_metadata(metadata_filepath)
+  question_ids <- dplyr::distinct(metadata, id) |> pull(id)
+
+  question_scores <- map(question_ids, ~get_question_score(data, .x, metadata)) |>
+    bind_and_tibble(data, ...)
+
+  return(question_scores)
 }
 
 
