@@ -66,7 +66,8 @@ get_new_submissions <- function(url = NULL) {
   live_data <- data[[1]]
   archived_data <- data[[2]]
 
-  new_submissions <- suppressMessages(anti_join(live_data, archived_data))
+  new_submissions <- suppressMessages(anti_join(live_data, archived_data)) |>
+    mutate(id = paste0(email_address, "@", timestamp))
 
   return(new_submissions)
 }

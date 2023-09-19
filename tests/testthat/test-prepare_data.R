@@ -14,9 +14,9 @@ test_that("Google Sheet data is returned with renamed columns", {
 
 
 test_that("multi-choice options are converted to binaries", {
-  data <- clean_google_sheet_data("live")
+  data <- get_new_submissions()
 
-  expect_equal(get_question_answers(data) |> ncol(), 125)
+  expect_equal(get_question_answers(data) |> ncol(), 126)
 })
 
 

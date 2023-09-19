@@ -10,7 +10,7 @@ get_overall_score <- function(data, metadata_filepath = NULL) {
       by = "pou") |>
     summarise(
       category_score = sum(score),
-      .by = c(pou, category_denominator)
+      .by = c(id, pou, category_denominator)
     ) |>
     mutate(
       category_percentage = category_score/category_denominator,
